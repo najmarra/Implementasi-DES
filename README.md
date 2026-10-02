@@ -1,4 +1,4 @@
-Simulasi Komunikasi Dua Arah dengan Enkripsi DES
+# Simulasi Komunikasi Dua Arah dengan Enkripsi DES
 
 Simulasi transmisi ciphertext antara **Sender** dan **Receiver** menggunakan algoritma **DES (Data Encryption Standard)** yang diimplementasikan secara manual, tanpa library enkripsi.
 
