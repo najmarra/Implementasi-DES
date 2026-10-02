@@ -21,8 +21,6 @@ Program terdiri dari dua proses terpisah (Sender dan Receiver) yang terhubung le
 | Ada transmisi data nyata | Dua proses terpisah, terhubung via TCP socket (port 5000) |
 | Enkripsi dan dekripsi DES manual | Ditulis sendiri di `des_simple.py`, tanpa library kriptografi |
 | Bahasa pemrograman bebas | Python 3 |
-| Capture Wireshark (opsional) | Lihat bagian 7 |
-
 ---
 
 ## 2. Cara Menjalankan
