@@ -105,4 +105,4 @@ def unpad(data):
 
 ## 5. Kesimpulan
 
-Algoritma DES berhasil diimplementasikan secara manual dan diverifikasi dengan test vector resmi (key `133457799BBCDFF1`, plaintext `0123456789ABCDEF`, ciphertext `85E813540F0AB405`). Simulasi komunikasi dua arah antara Sender dan Receiver berjalan dengan benar: data yang melewati jaringan hanya berupa ciphertext, dan pesan hanya dapat dibaca kembali oleh pihak yang memiliki key yang sama.
+Algoritma DES berhasil diimplementasikan secara manual dan diverifikasi dengan test vector resmi (key `133457799BBCDFF1`, plaintext `0123456789ABCDEF`, ciphertext `85E813540F0AB405`). Simulasi komunikasi dua arah antara Sender dan Receiver berjalan dengan benar. Data yang melewati jaringan hanya berupa ciphertext, dan pesan hanya dapat dibaca kembali oleh pihak yang memiliki key yang sama.
