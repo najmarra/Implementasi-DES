@@ -57,12 +57,12 @@ Plaintext : Receiver: tes receiver
 
 DES memproses data per **blok 64 bit (8 byte)** dengan key 64 bit (efektif 56 bit), menggunakan struktur **Feistel 16 ronde**.
 
-### 4.1 Pembuatan 16 Subkey (`make_subkeys`)
+### 3.1 Pembuatan 16 Subkey (`make_subkeys`)
 1. Key 64 bit dipermutasi dengan **PC-1** menjadi 56 bit.
 2. Dibagi dua: C (28 bit) dan D (28 bit).
 3. Tiap ronde: C dan D digeser kiri (1 atau 2 bit sesuai tabel `SHIFTS`), digabung, lalu dipermutasi dengan **PC-2** menjadi subkey 48 bit.
 
-### 4.2 Enkripsi satu blok (`des_block`)
+### 3.2 Enkripsi satu blok (`des_block`)
 1. Blok 64 bit dipermutasi dengan **IP** (Initial Permutation), lalu dibagi menjadi L (32 bit) dan R (32 bit).
 2. Ulangi **16 ronde**:
    ```
@@ -71,16 +71,16 @@ DES memproses data per **blok 64 bit (8 byte)** dengan key 64 bit (efektif 56 bi
    ```
 3. Gabungkan `R + L` (ditukar), lalu **FP** (Final Permutation) menghasilkan ciphertext.
 
-### 4.3 Fungsi f (`f`)
+### 3.3 Fungsi f (`f`)
 1. **Ekspansi (E)**: R 32 bit menjadi 48 bit.
 2. **XOR** dengan subkey 48 bit.
 3. **S-Box**: 8 kelompok 6 bit diubah menjadi 4 bit (baris = bit pertama dan terakhir, kolom = 4 bit tengah).
 4. **Permutasi P** pada hasil 32 bit.
 
-### 4.4 Dekripsi
+### 3.4 Dekripsi
 Proses **sama persis** dengan enkripsi, hanya **urutan 16 subkey dibalik** (`subkeys[::-1]`). Ini sifat khas jaringan Feistel.
 
-### 4.5 Pemrosesan pesan panjang
+### 3.5 Pemrosesan pesan panjang
 Pesan dipotong menjadi blok 8 byte dan tiap blok diproses sendiri-sendiri (mode **ECB**), setelah diberi padding.
 
 ---
